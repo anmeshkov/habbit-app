@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habbit App</title>
+
+    <!-- open-graph -->
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <!-- /open-graph -->
+
+    <!-- favicon -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png"> -->
+    <!-- /favicon -->
+
+    <!-- style -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <!-- /style -->
+</head>
+
+<body>
+
+    <!-- app -->
+    <div class="container">
+
+        <!-- sidebar -->
+        <aside class="sidebar">
+            <img class="logo" src="./img/logo.svg" alt="Habbit App Logo">
+            <nav class="sidebar__nav">
+
+            </nav>
+            <button class="nav__btn nav__add" onclick="toglePopupWindow()">
+                <img src="./img/Add.svg" alt="Add New Habbit">
+            </button>
+        </aside>
+        <!-- /sidebar -->
+
+        <!-- main -->
+        <div class="main__wrp">
+            <!-- heder -->
+            <header class="header__content">
+                <h1 class="header__title">-</h1>
+                <div class="progress">
+                    <div class="progress__text">
+                        <span class="progress__name">Прогресс</span>
+                        <span class="progress__percent">%</span>
+                    </div>
+                    <div class="progress__bar">
+                        <div class="progress__cover-bar"></div>
+                    </div>
+                </div>
+            </header>
+            <!-- /header -->
+
+            <!-- content -->
+            <main class="main__content">
+                <div class="habbit__wrp"></div>
+
+                <!-- form -->
+                <div class="habbit__item form__item">
+                    <div id="form-day" class="habbit__day"></div>
+
+                    <div class="habbit__form-wrp">
+                        <div class="habbit__comment">
+                            <form class="add-form" onsubmit="addDays(event)">
+
+                                <div class="input_wrp">
+                                    <input class="form__text" name="comment" type="text" placeholder="Комментарий">
+                                    <span class="error-msg">* Данное поле обязательно к заполнению</span>
+                                </div>
+                                <button class="form__btn">Готово</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- /form -->
+            </main>
+            <!-- /content -->
+        </div>
+        <!-- /main -->
+
+    </div>
+    <!-- /app -->
+
+    <!-- pop-up window -->
+    <div class="pop-up__wrp">
+        <div class="popup__window">
+            <button id="close-popup-btn" class="popup__close-btn" title="Закрыть окно" onclick="toglePopupWindow()"></button>
+            <h2 class="popup__title">Новая привычка</h2>
+            <span class="popup__subtitle">Иконка</span>
+            <div class="icons__wrp">
+                <button class="icons__button active" onclick="setIcon(this, 'sport')">
+                    <img class="icons__button-img" src="./img/sport.svg" alt="">
+                </button>
+                <button class="icons__button" onclick="setIcon(this, 'water')">
+                    <img class="icons__button-img" src="./img/water.svg" alt="">
+                </button>
+                <button class="icons__button" onclick="setIcon(this, 'food')">
+                    <img class="icons__button-img" src="./img/food.svg" alt="">
+                </button>
+            </div>
+            <form class="new-habbit__form" onsubmit="addHabbit(event)">
+                <div class="habbit__form__input">
+                    <input type="text" name="icon" placeholder="Иконка"  value="sport" hidden>
+                </div>
+                <div class="habbit__form__input">
+                    <input type="text" name="name" placeholder="Название">
+                    <span class="error-msg">* Данное поле обязательно к заполнению</span>
+                </div>
+                <div class="habbit__form__input">
+                    <input type="number" name="target" placeholder="Цель">
+                    <span class="error-msg">* Данное поле обязательно к заполнению</span>
+                </div>
+                <button class="habbit__form__button">Добавить</button>
+            </form>
+        </div>
+    </div>
+    <!-- /pop-up window -->
+
+    <!-- script -->
+    <script src="./libs/jquery/jquery-3.6.1.min.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- /script -->
+</body>
+
+</html>

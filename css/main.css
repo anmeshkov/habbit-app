@@ -1,0 +1,500 @@
+/* Reset CSS - сбрасываем стили (нужное раскоментировать)
+========================================================================== */
+@import url("./normalize.css");
+/* @import url("reset.css"); */
+
+
+/* Fonts - подключаем шрифты
+========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&display=swap');
+
+/* Переменные
+========================================================================== */
+:root {
+    --body-font-family: 'Comfortaa', cursive;
+    --body-font-size: 1rem;
+    --body-font-color: #000000;
+    --body-bg-color: #f5f5f5c4;
+    --main-bg-color: #F3F6FD;
+    --nav-button-width: 45px;
+    --nav-button-height: 45px;
+    --nav-button-background: #FFFFFF;
+    --nav-button-background-hover: #6A6AFB;
+    --nav-button-background-active: #5051F9;
+    --nav-button-margin-top: 25px;
+    /* habbit */
+    --habbit-background: #fff;
+    --habbit-font-weight: 500;
+    --habbit-font-size: 1rem;
+    --habbit-line-height: 1.25;
+    --habbit-color: #23235F;
+}
+
+/* Document - основные стили
+========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--body-font-color);
+    text-align: left;
+    background-color: var(--body-bg-color);
+}
+
+
+/* UI - стили интерфейса (a, title, button...)
+========================================================================== */
+
+
+
+/* Sidebar
+========================================================================== */
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.sidebar {
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FBFAFF;
+    border-left: 1px solid #E7EBFB;
+    border-right: 1px solid #E7EBFB;
+}
+
+.logo {
+    margin-bottom: 50px;
+}
+
+.sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav__btn {
+    width: var(--nav-button-width);
+    height: var(--nav-button-height);
+    background: var(--nav-button-background);
+    border: none;
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: 0px 8px 14px rgba(62, 107, 224, 0.12);
+    transition: background 0.2s ease-out;
+    cursor: pointer;
+}
+
+.nav__btn.active {
+    background: var(--nav-button-background-active);
+}
+
+.nav__btn:hover {
+    background: var(--nav-button-background-hover);
+}
+
+.nav__btn:hover img,
+.nav__btn.active img {
+    filter: brightness(0) invert(1);
+}
+
+.nav__btn+.nav__btn {
+    margin-top: var(--nav-button-margin-top);
+}
+
+
+.nav__add {
+    margin-top: var(--nav-button-margin-top);
+    border: 1px solid #CAD5FF;
+    background: inherit;
+    box-shadow: none;
+}
+.nav__add:hover {
+    border: none;
+}
+
+/* Main content
+========================================================================== */
+.main__wrp {
+    width: 100%;
+    padding: 45px 50px;
+    background: var(--main-bg-color);
+    border-right: 1px solid #E7EBFB;
+}
+
+/* Header content
+========================================================================== */
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header__title {
+    margin: 0;
+    font-style: normal;
+    font-size: 1.875rem;
+    line-height: 1.1;
+}
+
+.progress {
+    min-width: 235px;
+}
+
+.progress__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.progress__name {
+    font-size: 0.875rem;
+    line-height: 1.14;
+    color: #232360;
+}
+
+.progress__percent {
+    font-size: 0.75rem;
+    line-height: 1.08;
+    color: #768396;
+}
+
+.progress__bar {
+    background: #E6E9ED;
+    border-radius: 4px;
+    height: 5px;
+    overflow: hidden;
+}
+
+.progress__cover-bar {
+    background: #5051F9;
+    width: 0;
+    height: 5px;
+    transition: all 0.5s;
+}
+
+.main__content {}
+
+/* Habbit
+========================================================================== */
+.habbit__wrp {}
+
+.habbit__item {
+    display: flex;
+    flex-wrap: nowrap;
+
+    background: var(--habbit-background);
+    font-weight: var(--habbit-font-weight);
+    font-size: var(--habbit-font-size);
+    line-height: var(--habbit-line-height);
+    color: var(--habbit-color);
+
+    border-radius: 10px;
+    border: 1px solid #E7EBFB;
+    overflow: hidden;
+    margin-bottom: 12px;
+    box-shadow: 0px 8px 14px rgba(62, 107, 224, 0.12);
+}
+
+.habbit__day {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    padding: 20px 40px;
+    background: #FBFAFF;
+    border-right: 1px solid #E7EBFB;
+    font-size: 0, 875rem;
+    line-height: 1.14;
+    color: #000000;
+}
+
+.habbit__comment-wrp {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.habbit__comment {
+    width: 100%;
+    padding: 20px 25px;
+}
+
+.habbit__del-btn {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    border: none;
+    background: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 2px;
+    object-fit: contain;
+}
+
+.habbit__del-btn:hover {
+    background-color: #E7EBFB;
+}
+
+/* Form
+========================================================================== */
+.habbit__item.form__item {
+    box-shadow: none;
+}
+
+.habbit__form-wrp {
+    width: 100%;
+}
+
+.add-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.input_wrp {
+    width: 100%;
+}
+
+.form__text {
+    display: block;
+    width: 100%;
+    padding: 12px 12px 12px 48px;
+    background: #FFFFFF;
+    border: 1px solid #E7EBFB;
+    border-radius: 9px;
+    background: no-repeat url('../img/comment-bg.svg') left 20px center;
+    transition: box-shadow 0.2s ease-out;
+}
+
+.form__text:focus {
+    outline: none;
+    border: 1px solid #5051F9;
+    box-shadow: 0 0 0 0.2rem #5050f92a;
+}
+
+.form__text.error {
+    border: 1px solid #f95050d3;
+    box-shadow: 0 0 0 0.2rem #f950506e;
+}
+
+.error-msg {
+    display: none;
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: #f95050d3;
+}
+
+.error-msg.show-msg {
+    display: block;
+}
+
+.form__btn {
+    display: block;
+    /* height: 44px; */
+    margin-left: 14px;
+    padding: 14px 33px;
+    background: #EDECFE;
+    border: 1px solid #EDECFE;
+    border-radius: 9px;
+
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 14px;
+
+    color: #5051F9;
+    cursor: pointer;
+    transition: background 0.2s ease-out;
+}
+
+.form__btn:hover {
+    background: #6A6AFB;
+    color: #FFFFFF;
+
+}
+
+/* Pop-up
+========================================================================== */
+.pop-up__wrp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.pop-up__wrp.show {
+    display: flex;
+}
+
+.popup__window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 14px 12px rgba(56, 56, 56, 0.05);
+    border-radius: 10px;
+    padding: 22px 22px 42px 22px;
+    margin: 15px;
+    max-width: 424px;
+    width: 100%;
+    min-height: 340px;
+    position: relative;
+}
+
+.popup__close-btn {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    cursor: pointer;
+    background-image: url("../img/shape.svg");
+    background-repeat: no-repeat;
+    background-position: center center; 
+
+    background-color: inherit;
+}
+
+.popup__title {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.125;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.popup__subtitle {
+    display: block;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.14;
+    color: #768396;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.icons__wrp {
+
+    margin-bottom: 20px;
+}
+
+.icons__button {
+    width: 45px;
+    height: 45px;
+    padding: 9px;
+    background: #fff;
+    border: 1px solid #5051F9;
+    border-radius: 14px;
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+.icons__button:last-child {
+    margin-right: 0;
+}
+
+.icons__button.active {
+    background: var(--nav-button-background-active);
+}
+
+.icons__button:hover {
+    background: var(--nav-button-background-hover);
+}
+
+.icons__button.active img,
+.icons__button:hover img {
+    filter: brightness(0) invert(1);
+}
+
+
+.new-habbit__form {
+    width: 100%;
+}
+
+.habbit__form__input {
+    margin-bottom: 6px;
+}
+
+.habbit__form__input input {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #E7EBFB;
+    border-radius: 9px;
+    padding: 10px 20px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #8899A8;
+    box-shadow 0.2s ease-out;
+}
+
+.habbit__form__input input:focus {
+    outline: none;
+    border: 1px solid #5051F9;
+    box-shadow: 0 0 0 0.2rem #5050f92a;
+}
+
+.habbit__form__input .error-msg {
+    display: none;
+    text-align: left;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    font-size: 0.75rem;
+    color: #f95050d3;
+}
+
+.habbit__form__input .error-msg.show-msg {
+    display: block;
+}
+
+.habbit__form__input input.error {
+    border: 1px solid #f95050d3;
+    box-shadow: 0 0 0 0.2rem #f950506e;
+}
+
+.habbit__form__button {
+    display: block;
+    max-width: 120px;
+    min-height: 40px;
+    margin: 17px auto 0 auto;
+    font-weight: 500;
+    font-size: 0.813rem;
+    line-height: 1.07;
+
+    color: #5051F9;
+    background: #EDECFE;
+    border: none;
+    border-radius: 9px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.2s ease-out;
+}
+
+.habbit__form__button:hover{
+    background: #6A6AFB;
+    color: #FFFFFF;
+
+}
+
+
+
